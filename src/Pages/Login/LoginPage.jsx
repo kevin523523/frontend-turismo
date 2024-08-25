@@ -46,7 +46,7 @@ export const LoginPage = () => {
                         Crear la cuenta
                       </button>
                       <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
-                        ¿Ya posees una cuenta? <a href="#" class="font-light text-blue-600 hover:underline dark:text-blue-500">Inicia sesión aquí</a>
+                        ¿Ya posees una cuenta? <a href="/api/sign" class="font-light text-blue-600 hover:underline dark:text-blue-500">Inicia sesión aquí</a>
                       </p>
                     </form>
                   </div>

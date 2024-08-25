@@ -44,7 +44,7 @@ export const SignPage = () => {
                         Iniciar Sesión
                       </button>
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                        ¿Aún no posees una cuenta? <a href="#" class="font-light text-blue-600 hover:underline dark:text-blue-500">Registrate ahora</a>
+                        ¿Aún no posees una cuenta? <a href="/api/login" class="font-light text-blue-600 hover:underline dark:text-blue-500">Registrate ahora</a>
                       </p>
                     </form>
                   </div>
