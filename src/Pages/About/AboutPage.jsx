@@ -1,13 +1,19 @@
-// AboutPage.jsx
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { Footer } from "../../Components/Footer/Footer";
 import { NavBar } from "../../Components/NavBar/NavBar";
+import { NavBarActive } from "../../Components/NavBar/NavBarActive";
 import './About.css'; // Importa el archivo CSS
 
 export const AboutPage = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const userId = sessionStorage.getItem('user_id');
+    setIsLoggedIn(!!userId); // Se convierte en true si `userId` existe, false en caso contrario
+  }, []);
   return (
     <div className="app-container">
-      <NavBar />
+      {isLoggedIn ? <NavBarActive /> : <NavBar />}
       <main className="content">
         <section className="about-section">
           <div className="about-content">

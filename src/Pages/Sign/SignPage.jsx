@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import { Footer } from "../../Components/Footer/Footer";
 import { NavBar } from "../../Components/NavBar/NavBar";
-import './Sign.css'; // Importa el archivo CSS
+import './Sign.css';
+import { useNavigate } from 'react-router-dom';
 
 export const SignPage = () => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const user = event.target.user.value;
-    const password = event.target.password.value;
-  
     if (!user || !password) {
-      console.error('Usuario o contraseña faltantes');
+      setError('Usuario o contraseña faltantes');
       return;
     }
   
@@ -37,17 +36,20 @@ export const SignPage = () => {
       }
   
       const result = await response.json();
-      console.log(result);
+      console.log('Sign In Result:', result); // Verifica el resultado del inicio de sesión
+  
       if (result.status === 'success') {
-        alert('Inicio de sesión exitoso');
+        sessionStorage.setItem('user_id', result.user_id); // Guardar user_id en sessionStorage
+        setSuccess('Inicio de sesión exitoso');
+        // Redirigir a la página principal
+        navigate('/');
       } else {
-        console.log('Error:', result.message);
+        setError(result.message);
       }
     } catch (error) {
-      console.error('Error:', error);
+      setError('Error al iniciar sesión: ' + error.message);
     }
   };
-  
   
 
   return (
@@ -69,10 +71,10 @@ export const SignPage = () => {
                     </h1>
                     <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                       <div>
-                        <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Usuario</label>
+                        <label htmlFor="user" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Usuario</label>
                         <input 
                           type="text" 
-                          name="text" 
+                          name="user" 
                           id="user" 
                           value={user}
                           onChange={(e) => setUser(e.target.value)}
@@ -112,13 +114,10 @@ export const SignPage = () => {
                       </div>
                       <button 
                         type="submit" 
-                        className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       >
-                        Iniciar Sesión
+                        Iniciar sesión
                       </button>
-                      <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                        ¿Aún no posees una cuenta? <a href="/api/login" className="font-light text-blue-600 hover:underline dark:text-blue-500">Registrate ahora</a>
-                      </p>
                       {error && <p className="text-red-600">{error}</p>}
                       {success && <p className="text-green-600">{success}</p>}
                     </form>
@@ -132,4 +131,4 @@ export const SignPage = () => {
       <Footer />
     </div>
   );
-}
+};

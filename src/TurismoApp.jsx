@@ -1,13 +1,20 @@
+import { useEffect, useState } from 'react';
 import { NavBar } from "./Components/NavBar/NavBar";
-import CardList from "./Components/Card/Card";
+import { NavBarActive } from "./Components/NavBar/NavBarActive"; 
 import { Footer } from "./Components/Footer/Footer";
 
 export const TurismoApp = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const userId = sessionStorage.getItem('user_id');
+    setIsLoggedIn(!!userId);
+  }, []);
+
   return (
     <div className="app-container">
-        <NavBar />
-        <CardList />
-        <Footer />
+      {isLoggedIn ? <NavBarActive /> : <NavBar />}
+      <Footer />
     </div>
-  )
-}
+  );
+};
