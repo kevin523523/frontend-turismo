@@ -1,3 +1,4 @@
+// src/CardList.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,8 +10,6 @@ const CardList = () => {
   useEffect(() => {
     const fetchCards = async () => {
       const userId = sessionStorage.getItem('user_id');
-      console.log('User ID:', userId);
-
       if (!userId) {
         setError('Usuario no autenticado');
         setTimeout(() => navigate('/api/sign'), 3000); 
@@ -26,7 +25,6 @@ const CardList = () => {
         });
 
         const data = await response.json();
-        console.log('Response Data:', data);
 
         if (data.status === 'error') {
           setError(data.message);

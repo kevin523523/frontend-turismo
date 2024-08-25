@@ -7,6 +7,7 @@ import { ClimaPage } from './Pages/Clima/ClimaPage.jsx';
 import { LoginPage } from './Pages/Login/LoginPage.jsx';
 import { SignPage } from  './Pages/Sign/SignPage.jsx';
 import { ReservaPage } from  './Pages/Reserva/ReservaPage.jsx';
+import CardDetail from './Components/Card/CardDetail.jsx';
 
 import {
   createBrowserRouter,
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: '/api/sign',
     element: <SignPage />,
+  },
+  {
+    path: '/card/:cardId',
+    element: <CardDetail />, // Nueva ruta para la página de detalles de la tarjeta
   },
 ]);
 
