@@ -1,0 +1,76 @@
+/* About.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .NavBar {
+    /* Asegúrate de que el NavBar tenga un tamaño fijo para que puedas ajustar el margen de contenido */
+    height: 60px; /* Ajusta según el tamaño de tu NavBar */
+  }
+  
+  .content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el contenido al inicio verticalmente */
+    padding: 20px;
+    margin-top: 60px; /* Ajusta este valor para crear un espacio suficiente debajo del NavBar */
+    overflow-y: auto;
+  }
+  
+  .about-section {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px 0; /* Añade margen arriba y abajo para evitar superposición */
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .about-image-container {
+    flex: 1;
+  }
+  
+  .about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .about-text {
+    flex: 2;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
