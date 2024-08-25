@@ -46,7 +46,7 @@ const CardList = () => {
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
-    fetch('/api/places')
+    fetch('')
       .then((response) => response.json())
       .then((data) => setPlaces(data))
       .catch((error) => console.error('Error fetching data:', error));
