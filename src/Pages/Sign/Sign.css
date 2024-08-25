@@ -1,0 +1,39 @@
+/* LoginPage.css */
+
+.button-primary {
+    width: 100%;
+    color: black;
+    background-color: #2563eb; /* bg-blue-600 */
+    font-weight: 500;
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem; /* text-sm */
+    padding: 0.625rem 1.25rem; /* px-5 py-2.5 */
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+.button-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.5); /* focus:ring-4 focus:ring-blue-300 */
+}
+
+.button-primary:focus:not(:focus-visible) {
+    box-shadow: none;
+}
+
+.button-primary.dark {
+    background-color: #2563eb; /* dark:bg-blue-600 */
+}
+
+.button-primary.dark:hover {
+    background-color: #1d4ed8; /* dark:hover:bg-blue-700 */
+}
+
+.button-primary.dark:focus {
+    box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.5); /* dark:focus:ring-blue-800 */
+}
