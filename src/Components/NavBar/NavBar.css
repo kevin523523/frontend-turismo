@@ -1,37 +1,34 @@
-/* Header Style */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 20px; /* Reduce el padding superior e inferior */
-    background: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad del 50% */
-    backdrop-filter: blur(10px); /* Desenfoque de fondo para mejorar la visibilidad */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 
-/* Logo Style */
 .logo {
-    font-size: 28px; /* Ajusta el tamaño de la fuente del logo */
+    font-size: 28px;
     color: #fff;
     font-weight: 700;
 }
 
-/* Navbar Link Style */
+
 a, .navbar-link {
     position: relative;
-    font-size: 16px; /* Ajusta el tamaño de la fuente de los enlaces */
+    font-size: 16px;
     color: #fff;
     font-weight: 500;
-    margin-left: 20px; /* Reduce el margen entre los enlaces */
-    text-decoration: none; /* Elimina subrayado */
+    margin-left: 20px;
+    text-decoration: none;
 }
 
-/* Agregar estilo adicional para el hover o active estado si es necesario */
 a:hover, .navbar-link:hover {
-    color: #f0f0f0; /* Cambia el color al pasar el ratón */
+    color: #f0f0f0;
 }

@@ -3,7 +3,7 @@ import './index.css';
 import ReactDOM from 'react-dom/client';
 import { TurismoApp } from './TurismoApp.jsx';
 import { AboutPage } from './Pages/About/AboutPage.jsx';
-import { AyudaPage } from './Pages/Ayuda/AyudaPage.jsx';
+import { ClimaPage } from './Pages/Clima/ClimaPage.jsx';
 import { LoginPage } from './Pages/Login/LoginPage.jsx';
 import { SignPage } from  './Pages/Sign/SignPage.jsx';
 import { ReservaPage } from  './Pages/Reserva/ReservaPage.jsx';
@@ -25,8 +25,8 @@ const router = createBrowserRouter([
     element: <AboutPage />,
   },
   {
-    path: '/api/ayuda',
-    element: <AyudaPage />,
+    path: '/api/clima',
+    element: <ClimaPage />,
   },
   {
     path: '/api/reserva',
