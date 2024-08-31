@@ -1,0 +1,30 @@
+
+.actividad-content {
+    margin-top: 150px; 
+    text-align: center;
+}
+
+
+#fotoCiudad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #fotoCiudad img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+  }
+
+  #titleCity, 
+  #ciudad {
+    background-color: white; 
+    padding: 10px; 
+    border-radius: 5px;
+    color: black; 
+    text-align: center; 
+    display: inline-block;
+  }
+  
