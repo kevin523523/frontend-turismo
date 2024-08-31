@@ -17,6 +17,7 @@ export const NavBarActive = () => {
         <Link to="/api/reserva" className="navbar-link">Reservar</Link>
         <Link to="/api/about" className="navbar-link">Acerca De Nosotros</Link>
         <Link to="/api/clima" className="navbar-link">Clima</Link>
+        <Link to="/api/actividad" className="navbar-link">Actividades</Link>
         <a
           onClick={handleLogout}
           className="navbar-link text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-1.5 py-1.5 me-2 ml-3 focus:outline-none"
