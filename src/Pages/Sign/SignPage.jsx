@@ -36,10 +36,10 @@ export const SignPage = () => {
       }
   
       const result = await response.json();
-      console.log('Sign In Result:', result); // Verifica el resultado del inicio de sesión
+      console.log('Sign In Result:', result);
   
       if (result.status === 'success') {
-        sessionStorage.setItem('user_id', result.user_id); // Guardar user_id en sessionStorage
+        sessionStorage.setItem('user_id', result.user_id);
         setSuccess('Inicio de sesión exitoso');
         // Redirigir a la página principal
         navigate('/');

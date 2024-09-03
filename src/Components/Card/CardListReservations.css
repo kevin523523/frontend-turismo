@@ -1,0 +1,32 @@
+.card-detail-reservations {
+    max-width: 300px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    
+}
+
+.card-list-reservations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-image-detail-reservations {
+    width: 350px;
+    height: 200px;
+}
+
+
+.card-title-detail {
+    margin: 8px 0;
+    font-weight: bold;
+    color: cornflowerblue;
+    font-size: x-large;
+}
+

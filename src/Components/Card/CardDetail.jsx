@@ -36,9 +36,7 @@ const CardDetail = () => {
             if (data.routes && data.routes[cardId]) {
                 setCard(data.routes[cardId]);
                 setUserHasReservation(data.routes[cardId].reserved_users.includes(userId));
-            } else {
-                setError('No se encontraron detalles para esta tarjeta.');
-            }
+            } 
 
         } catch (error) {
             setError('Error al obtener los detalles de la tarjeta: ' + error.message);

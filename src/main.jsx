@@ -8,6 +8,7 @@ import { LoginPage } from './Pages/Login/LoginPage.jsx';
 import { SignPage } from  './Pages/Sign/SignPage.jsx';
 import { ReservaPage } from  './Pages/Reserva/ReservaPage.jsx';
 import { ActividadPage } from './Pages/Actividad/ActividadPage.jsx';
+import {ReservationPage} from './Pages/Reservation/ReservationPage.jsx';
 import CardDetail from './Components/Card/CardDetail.jsx';
 
 import {
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/card/:cardId',
-    element: <CardDetail />, // Nueva ruta para la página de detalles de la tarjeta
+    element: <CardDetail />,
+  },
+  {
+    path: `/reservation/:${sessionStorage.getItem('user_id')}`,
+    element: <ReservationPage />,
   },
 ]);
 
