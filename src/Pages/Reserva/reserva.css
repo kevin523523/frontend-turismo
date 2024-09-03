@@ -1,0 +1,15 @@
+/* styles.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+

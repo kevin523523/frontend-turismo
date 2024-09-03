@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Footer } from '../../Components/Footer/Footer';
 import { NavBar } from '../../Components/NavBar/NavBar';
 import { NavBarActive } from "../../Components/NavBar/NavBarActive";
+import './cardDetail.css';
 
 const CardDetail = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -12,7 +13,6 @@ const CardDetail = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    // Función para obtener los detalles de la tarjeta
     const fetchCardDetail = async () => {
         const userId = sessionStorage.getItem('user_id');
         if (!userId) return;
@@ -104,56 +104,35 @@ const CardDetail = () => {
     return (
         <div className="app-container">
             {isLoggedIn ? <NavBarActive /> : <NavBar />}
-            <div className="card-detail" style={{ 
-                maxWidth: '450px', 
-                marginTop: '80px',
-                marginLeft: '35%', 
-                padding: '16px', 
-                backgroundColor: 'white', 
-                border: '1px solid #ddd', 
-                borderRadius: '8px', 
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)' 
-                }}>
+            <div className="card-detail">
                 {error && <p className="text-red-600">{error}</p>}
                 {card ? (
-                    <div>
+                    <div className="card-content-detail">
                         <img 
+                            className="card-image-detail" 
                             src={card.image_url} 
                             alt={card.name} 
-                            style={{ width: '100%', height: '400px', borderRadius: '8px' }} 
                         />
-                        <h2 style={{ margin: '16px 0' }}>{card.name}</h2>
-                        <p>Estado: {card.status}</p>
-                        <p>Máx. Reservas: {card.max_reservations}</p>
-                        {!userHasReservation ? (
-                            <button 
-                                onClick={handleReserve} 
-                                style={{ 
-                                padding: '8px 16px', 
-                                backgroundColor: '#007bff', 
-                                color: 'white', 
-                                border: 'none', 
-                                borderRadius: '4px', 
-                                cursor: 'pointer' 
-                                }}
-                            >
-                                Reservar
-                            </button>
-                        ) : (
-                            <button 
-                                onClick={handleCancelReservation} 
-                                style={{ 
-                                padding: '8px 16px', 
-                                backgroundColor: '#dc3545', 
-                                color: 'white', 
-                                border: 'none', 
-                                borderRadius: '4px', 
-                                cursor: 'pointer' 
-                                }}
-                            >
-                                Cancelar Reserva
-                            </button>
-                        )}
+                        <div className="card-text-detail">
+                            <h2 className="card-title-detail">{card.name}</h2>
+                            <p><span>Estado: </span>{card.status}</p>
+                            <p><span>Máx. Reservas: </span>{card.max_reservations}</p>
+                            {!userHasReservation ? (
+                                <button 
+                                    className="reserve-button"
+                                    onClick={handleReserve}
+                                >
+                                    Reservar
+                                </button>
+                            ) : (
+                                <button 
+                                    className="cancel-button"
+                                    onClick={handleCancelReservation}
+                                >
+                                    Cancelar Reserva
+                                </button>
+                            )}
+                        </div>
                     </div>
                 ) : (
                     <p>Cargando detalles...</p>

@@ -89,7 +89,7 @@ export const ActividadPage = () => {
         
         {ciudades.length > 0 && (
           <div className="ciudad-resultado">
-            <h2 id="titleCity">Ciudades con la actividad seleccionada:</h2>
+            <h2 id="titleCity" className='m-4'>Ciudades con la actividad seleccionada:</h2>
             <ul>
               {ciudades.map((ciudad, index) => (
                 <li id="ciudad" key={index}>{ciudad}</li>
@@ -97,7 +97,7 @@ export const ActividadPage = () => {
             </ul>
             {foto && (
               <div id="fotoCiudad">
-                <img src={foto} alt={ciudades[0]} />
+                <img src={foto} alt={ciudades[0]} style={{ width: '500px', height: '400px' }} />
               </div>
             )}
           </div>

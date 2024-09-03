@@ -1,7 +1,7 @@
 // src/CardList.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import './cardList.css'
 const CardList = () => {
   const [cards, setCards] = useState([]);
   const [error, setError] = useState('');
@@ -55,18 +55,11 @@ const CardList = () => {
       {error && <p className="text-red-600">{error}</p>}
       {cards.length > 0 ? (
         cards.map(card => (
-          <div key={card.id} className="card" style={{ 
-            backgroundColor: 'white', 
-            border: '1px solid #ddd', 
-            borderRadius: '8px', 
-            padding: '16px', 
-            margin: '8px', 
-            boxShadow: '0 2px 4px rgba(0,0,0,0.1)' 
-          }}>
-            <img src={card.image_url} alt={card.name} className="card-image" style={{ width: '200px', height: '200px', borderRadius: '8px' }} />
-            <h3 className="card-title" style={{ margin: '8px 0' }}>{card.name}</h3>
-            <p className="card-status">Estado: {card.status}</p>
-            <p className="card-max-reservations">Máx. Reservas: {card.max_reservations}</p>
+          <div key={card.id} className="card">
+            <img src={card.image_url} alt={card.name} className="card-image" />
+            <h2 className="card-title">{card.name}</h2>
+            <p className="card-status"><span>Estado: </span>{card.status}</p>
+            <p className="card-max-reservations"><span>Máx. Reservas: </span>{card.max_reservations}</p>
             <button 
               onClick={() => handleViewMore(card.id)} 
               style={{ 

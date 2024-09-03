@@ -3,7 +3,7 @@ import CardList from '../../Components/Card/CardList';
 import { Footer } from '../../Components/Footer/Footer';
 import { NavBar } from '../../Components/NavBar/NavBar';
 import { NavBarActive } from "../../Components/NavBar/NavBarActive"; 
-
+import './reserva.css'
 export const ReservaPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -15,9 +15,9 @@ export const ReservaPage = () => {
   return (
     <div className="app-container">
       {isLoggedIn ? <NavBarActive /> : <NavBar />}
-      <main className="content">
+      <div className="content">
         <CardList />
-      </main>
+      </div>
       <Footer />
     </div>
   );
