@@ -13,7 +13,8 @@ export const NavBarActive = () => {
     <header className='header'>
       <a href='/' className='logo'>EcoTurismo</a>
       <nav className='navbar'>
-        <Link to="/" className="navbar-link">Home</Link>
+        <Link to="/" className="navbar-link">Inicio</Link>
+        <Link to="/api/guia" className="navbar-link">Guías</Link>
         <Link to="/api/reserva" className="navbar-link">Reservar</Link>
         <Link to="/api/about" className="navbar-link">Acerca De Nosotros</Link>
         <Link to="/api/clima" className="navbar-link">Clima</Link>

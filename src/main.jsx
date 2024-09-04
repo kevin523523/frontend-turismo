@@ -9,7 +9,10 @@ import { SignPage } from  './Pages/Sign/SignPage.jsx';
 import { ReservaPage } from  './Pages/Reserva/ReservaPage.jsx';
 import { ActividadPage } from './Pages/Actividad/ActividadPage.jsx';
 import {ReservationPage} from './Pages/Reservation/ReservationPage.jsx';
+import {GuiaPage} from './Pages/Guia/GuiaPage.jsx';
 import CardDetail from './Components/Card/CardDetail.jsx';
+import CardDetailGuides from './Components/Card/CardDetailGuides.jsx';
+
 
 import {
   createBrowserRouter,
@@ -48,8 +51,16 @@ const router = createBrowserRouter([
     element: <ActividadPage />,
   },
   {
+    path: '/api/guia',
+    element: <GuiaPage />,
+  },
+  {
     path: '/card/:cardId',
     element: <CardDetail />,
+  },
+  {
+    path: '/card/:guideId',
+    element: <CardDetailGuides />,
   },
   {
     path: `/reservation/:${sessionStorage.getItem('user_id')}`,
