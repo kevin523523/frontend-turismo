@@ -54,14 +54,14 @@ const CardListGuides = () => {
     <div className="card-list">
       {error && <p className="text-red-600">{error}</p>}
       {guides.length > 0 ? (
-        guides.map((guide, index) => (
-          <div key={index} className="card">
+        guides.map(guide => (
+          <div key={guide.id} className="card">
             <img src={guide.image_url} alt={guide.name} className="card-image" />
             <h2 className="card-title">{guide.name}</h2>
-            <p className="card-status"><span>Estado: </span>{guide.status}</p>
+            <p className="card-status"><span>Estado: </span>{guide.availability}</p>
             <p className="card-max-reservations"><span>Máx. Reservas: </span>{guide.max_reservations}</p>
             <button
-              onClick={() => handleViewMore(index)}
+              onClick={() => handleViewMore(guide.id)}
               style={{
                 padding: '8px 16px',
                 backgroundColor: '#007bff',

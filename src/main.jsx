@@ -59,7 +59,7 @@ const router = createBrowserRouter([
     element: <CardDetail />,
   },
   {
-    path: '/card/:guideId',
+    path: '/guide/:guideId',
     element: <CardDetailGuides />,
   },
   {
