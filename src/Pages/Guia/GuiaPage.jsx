@@ -15,9 +15,10 @@ export const GuiaPage = () => {
   return (
     <div className="app-container">
       {isLoggedIn ? <NavBarActive /> : <NavBar />}
-      <div className="content">
+      {isLoggedIn? <div className="content">
         <CardListGuides />
       </div>
+      : <h1>Iniciar Sesión</h1>}
       <Footer />
     </div>
   );
